@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hindi Lofi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.background-image {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;}
+.image-container img {display:block; transition:transform 1.5s ease;}
+.image-container:hover img {transform:scale(1.1);}
+body {background-color:black; color:green; font-family:'roboto',sans-serif; text-align:center;}
+</style>
+</head>
+<body>
+<img src="C:\Users\Sameer\Desktop\html project\LOFIBG.png" alt="Background Image" class="background-image">
+<div class="image-container">
+<a href="index.html"><img src="C:\Users\Sameer\Desktop\html project\HtmlBruh\LOGO.png" alt="ayega ruko" style="width: 160.1px; height: 45.3px;"></a>
+</div><br><br><br>
+<div class="image-container">
+<img src="C:\Users\Sameer\Desktop\html project\HtmlSlowed\AGAR TUM SAATH HO.png" alt="Click me" class="image" data-audio="C:\Users\Sameer\Desktop\html project\HtmlSlowed\Agar tum saath ho.mp3" style="cursor:pointer; width:381.333px; height:89.333px;">
+</div><br><br>
+<div class="image-container">
+<img src="C:\Users\Sameer\Desktop\html project\HtmlSlowed\HAWAYIEN.png" alt="Click me" class="image" data-audio="C:\Users\Sameer\Desktop\html project\HtmlSlowed\Hawayein.mp3" style="cursor:pointer; width:381.333px; height:89.333px;">
+</div><br><br>
+<div class="image-container">
+<img src="C:\Users\Sameer\Desktop\html project\HtmlSlowed\IKTARA.png" alt="Click me" class="image" data-audio="C:\Users\Sameer\Desktop\html project\HtmlSlowed\Iktara.mp3" style="cursor:pointer; width:381.333px; height:89.333px;">
+</div><br><br>
+<div class="image-container">
+<img src="C:\Users\Sameer\Desktop\html project\HtmlSlowed\KUCH TOH LOG KAHENGE.png" alt="Click me" class="image" data-audio="C:\Users\Sameer\Desktop\html project\HtmlSlowed\Kuch toh log kahenge.mp3" style="cursor:pointer; width:381.333px; height:89.333px;">
+</div><br><br>
+<audio id="audio"></audio>
+<script>
+var images = document.querySelectorAll('.image');
+var audio = document.getElementById('audio');
+var isPlaying = false;
+var currentAudio = null;
+images.forEach(function(image) {
+image.addEventListener('click', function() {
+var audioFile = this.getAttribute('data-audio');
+if (!isPlaying || audioFile !== currentAudio) {
+audio.src = audioFile;
+audio.play();
+isPlaying = true;
+currentAudio = audioFile;
+} else {
+audio.pause();
+isPlaying = false;
+currentAudio = null;
+}
+});
+});
+audio.addEventListener('ended', function() {
+isPlaying = false;
+currentAudio = null;
+});
+</script>
+</script>
+</body>
+</html>
